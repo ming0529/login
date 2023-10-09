@@ -20,7 +20,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     const userinfo = await this.usersService.findUserById(payload.sub);
 
     if (userinfo) {
-      return userinfo; //reauest.user안에 user들어가게됨
+      return userinfo; //request.user안에 userinfo들어가게됨
     } else {
       throw new UnauthorizedException('접근 오류');
     }
